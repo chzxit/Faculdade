@@ -23,7 +23,7 @@ public class Principal {
                 case 1:
                     Roupas calca = Roupas.lerRoupas(Calca.class, scan);
                     gerenciador.adicionarProduto(calca);
-                    System.out.println();
+                    
                     calca.ImprimirDetalhes();
                     System.out.println();
                     break;
