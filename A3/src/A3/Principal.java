@@ -1,12 +1,11 @@
-package A3;
+
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         Gerenciadordeproduto gerenciador = new Gerenciadordeproduto();
         Scanner scan = new Scanner(System.in);
-        new Janela();
-
+        
         while (true) {
             System.out.println("Escolha uma opção:");
             System.out.println("1. Adicionar Calça");

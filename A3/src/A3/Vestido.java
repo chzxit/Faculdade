@@ -1,4 +1,3 @@
-package A3;
 import java.util.Scanner;
 
 public class Vestido extends Roupas {

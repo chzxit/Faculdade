@@ -1,5 +1,3 @@
-package A3;
-
 import java.util.ArrayList;
 
 public class Gerenciadordeproduto {
