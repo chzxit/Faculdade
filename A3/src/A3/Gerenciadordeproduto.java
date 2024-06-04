@@ -7,15 +7,13 @@ public class Gerenciadordeproduto {
     public Gerenciadordeproduto() {
         this.produtos = new ArrayList<>();
     }
-
+   
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
     }
 
-    public void listarProdutos() {
-        for (Produto produto : produtos) {
-            produto.ImprimirDetalhes();
-        }
+    public ArrayList<Produto> listarProdutos() {
+        return new ArrayList<>(produtos); 
     }
 
     public void removerProduto(String id) {
@@ -30,4 +28,16 @@ public class Gerenciadordeproduto {
         }
         return null;
     }
+
+    public boolean alterarProduto(String id, String novoNome, double novoPreco, String novaCor, String novoTamanho) {
+        Produto produto = buscarProduto(id);
+        if (produto != null) {
+            produto.setNome(novoNome);
+            produto.setPreco(novoPreco);
+            produto.setCor(novaCor);
+            produto.setTamanho(novoTamanho);
+            return true;
+        }
+        return false;
+     }
 }
