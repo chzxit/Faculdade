@@ -10,8 +10,6 @@ public class JanelaPrincipal extends JFrame {
     private Gerenciadordeproduto gerenciador;
 
     public JanelaPrincipal(Gerenciadordeproduto gerenciador){
-        super("Loja de Roupas");
-        setBounds(100, 100, 600, 400); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gerenciador = new Gerenciadordeproduto();
         initUI();
