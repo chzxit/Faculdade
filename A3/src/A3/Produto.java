@@ -1,5 +1,3 @@
-
-
 public class Produto {
 
     private String nome;
@@ -18,15 +16,11 @@ public class Produto {
         this.cor = cor;
         this.tamanho = tamanho;
         this.tipo = tipo;
+        this.material = material;
+        this.estilo = estilo; 
+        
     }
    
-    public void ImprimirDetalhes(){
-        System.out.println("Nome: " + nome);
-        System.out.println("Preço: " + preco);
-        System.out.println("ID: " + id);
-        System.out.println("Cor: " + cor);
-        System.out.println("Tamanho: " + tamanho);
-    }
 
     public String getNome() {
         return nome;
@@ -91,6 +85,8 @@ public class Produto {
     public void setEstilo(String estilo){
         this.estilo = estilo;
     }
+    
+    
 
   
 }

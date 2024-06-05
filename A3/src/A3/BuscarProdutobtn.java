@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -18,15 +19,18 @@ public class BuscarProdutobtn extends JFrame{
 
     public void initUI(){
         this.setTitle("Buscar Produto ");
-        this.setSize(400,300);
+        this.setSize(200,150);
         this.setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
         JLabel idLabel = new JLabel("ID do Produto: ");
         JTextField idField = new JTextField();
+        idField.setPreferredSize(new Dimension(55,20));
         JButton BuscarButton = new JButton("Buscar ");
+
         panel.add(idLabel);
         panel.add(idField);
+
         panel.add(BuscarButton);
 
         add(panel);

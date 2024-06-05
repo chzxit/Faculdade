@@ -19,7 +19,7 @@ public class JanelaPrincipal extends JFrame {
     private void initUI(){
 
         this.setTitle("Gerenciador de Roupas");
-        this.setSize(500,350);
+        this.setSize(700,450);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
