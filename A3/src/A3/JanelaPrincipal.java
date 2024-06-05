@@ -7,12 +7,13 @@ import javax.swing.JPanel;
 
 public class JanelaPrincipal extends JFrame {
 
-    private Gerenciadordeproduto gerenciador;
+    final private Gerenciadordeproduto gerenciador;
 
     public JanelaPrincipal(Gerenciadordeproduto gerenciador){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gerenciador = new Gerenciadordeproduto();
+        this.gerenciador = gerenciador;
         initUI();
+        this.setVisible(true);
     }
 
     private void initUI(){
@@ -45,6 +46,7 @@ public class JanelaPrincipal extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e){
+                System.out.println(gerenciador);
                 new AdicionarProdutobtn(gerenciador).setVisible(true);
             }
 

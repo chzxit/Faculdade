@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
+
 public class Gerenciadordeproduto {
 
-    private ArrayList<Produto> produtos;
+    private static ArrayList<Produto> produtos;
 
     public Gerenciadordeproduto() {
-        this.produtos = new ArrayList<>();
+        produtos = new ArrayList<>();
     }
    
     public void adicionarProduto(Produto produto) {
@@ -40,4 +41,7 @@ public class Gerenciadordeproduto {
         }
         return false;
      }
+
+
+     
 }

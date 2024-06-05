@@ -5,9 +5,7 @@ public class Principal {
        
         Gerenciadordeproduto gerenciador = new Gerenciadordeproduto();
 
-        JanelaPrincipal janelaPrincipal = new JanelaPrincipal(gerenciador);
-
-        janelaPrincipal.setVisible(true);
+        new JanelaPrincipal(gerenciador);
 
     }
 

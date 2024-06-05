@@ -26,7 +26,12 @@ public class ListarProdutobtn extends JFrame {
 
         ArrayList<Produto> produtos = gerenciador.listarProdutos();
         for(Produto produto : produtos ){
-            textArea.append(produto.toString()+ "/n");
+            StringBuilder produtoStr = new StringBuilder();
+            produtoStr.append("ID: " + produto.getId() + "\n");
+            produtoStr.append("Nome: " + produto.getNome() + "\n");
+            produtoStr.append("Nome: " + produto.getPreco() + "\n");
+            produtoStr.append("----------------");
+            textArea.append(produtoStr + "\n");
         }
     }
 

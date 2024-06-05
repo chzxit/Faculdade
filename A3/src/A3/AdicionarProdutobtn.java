@@ -2,6 +2,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -9,8 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AdicionarProdutobtn extends JFrame{
-    private Gerenciadordeproduto gerenciador;
-
+    final private Gerenciadordeproduto gerenciador;
+    
     public AdicionarProdutobtn(Gerenciadordeproduto gerenciador){
         this.gerenciador = gerenciador;
         initUI();
@@ -23,12 +24,12 @@ public class AdicionarProdutobtn extends JFrame{
         this.setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(8,2));
+        panel.setLayout(new GridLayout(9,2));
 
         JLabel nomeLabel = new JLabel("Nome: ");
         JTextField nomeField = new JTextField();
-        JLabel preçoLabel = new JLabel("Preço: ");
-        JTextField preçoField = new JTextField();
+        JLabel precoLabel = new JLabel("Preço: ");
+        JTextField precoField = new JTextField();
         JLabel idLabel = new JLabel("ID: ");
         JTextField idField = new JTextField();
         JLabel corLabel = new JLabel("Cor: ");
@@ -36,6 +37,7 @@ public class AdicionarProdutobtn extends JFrame{
         JLabel tamanhoLabel = new JLabel("Tamanho: ");
         JTextField tamanhoField = new JTextField();
         JLabel tipoLabel = new JLabel("Tipo: ");
+        JComboBox<String> tipoComboBox = new JComboBox<>(new String[]{"Calça", "Camisa", "Vestido"});
         JTextField tipoField = new JTextField();
         JLabel materialLabel = new JLabel("Material: ");
         JTextField materialField = new JTextField();
@@ -46,8 +48,8 @@ public class AdicionarProdutobtn extends JFrame{
 
         panel.add(nomeLabel);
         panel.add(nomeField);
-        panel.add(preçoLabel);
-        panel.add(preçoField);
+        panel.add(precoLabel);
+        panel.add(precoField);
         panel.add(idLabel);
         panel.add(idField);
         panel.add(corLabel);
@@ -55,7 +57,7 @@ public class AdicionarProdutobtn extends JFrame{
         panel.add(tamanhoLabel);
         panel.add(tamanhoField);
         panel.add(tipoLabel);
-        panel.add(tipoField);
+        panel.add(tipoComboBox);
         panel.add(materialLabel);
         panel.add(materialField);
         panel.add(estiloLabel);
@@ -67,25 +69,40 @@ public class AdicionarProdutobtn extends JFrame{
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
+                System.out.println("Produto adicionado! ");
                 String nome = nomeField.getText();
-                double preço = Double.parseDouble(preçoField.getText());
+                String precoStr = precoField.getText().replace(",", ".");
+                double preco = Double.parseDouble(precoStr);
                 String id = idField.getText();
                 String cor = corField.getText();
                 String tamanho = tamanhoField.getText();
                 String material = materialField.getText();
                 String estilo = estiloField.getText();
+                String tipo = tipoField.getText();
 
-                Calca calca = new Calca(nome, preço, id, cor, tamanho, tamanho, material, estilo);
-                Camisa camisa = new Camisa(nome, preço, id, cor, tamanho, tamanho, material, estilo);
-                Vestido vestido = new Vestido(nome, preço, id, cor, tamanho, tamanho, material, estilo);
-                gerenciador.adicionarProduto(calca);
-                gerenciador.adicionarProduto(camisa);
-                gerenciador.adicionarProduto(vestido);
+              
+               
+                Produto produto = null;
+                if (tipo.equals("Calça")) {
+                    produto = new Calca(nome, preco, id, cor, tamanho, material, estilo, tipo);
+                } else if (tipo.equals("Camisa")) {
+                    produto = new Camisa(nome, preco, id, cor, tamanho, material, estilo, tipo);
+                } else if (tipo.equals("Vestido")) {
+                    produto = new Vestido(nome, preco, id, cor, tamanho, material, estilo, tipo);
+                }
 
-                JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso! ");
+                if (produto != null) {
+                    gerenciador.adicionarProduto(produto);
+                    JOptionPane.showMessageDialog(null, "Produto adicionado!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro ao adicionar o produto!");
+                }
+
                 dispose();
             }
         });
+    
+        
 
     }
     
