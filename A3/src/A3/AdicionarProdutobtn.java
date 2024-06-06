@@ -94,13 +94,13 @@ public class AdicionarProdutobtn extends JFrame {
                         roupa= new Vestido(nome , preco , id, cor ,tamanho , tipo ,material ,estilo);
                             break;
                         default:
-                            JOptionPane.showMessageDialog(null, "Tipo de produto não reconhecido: " + tipo);
+                            JOptionPane.showMessageDialog(null, "Tipo de produto não reconhecido: " );
                             return; 
                     }
 
                     if (roupa != null) {
                         gerenciador.adicionarProduto(roupa);
-                        JOptionPane.showMessageDialog(null, "Produto adicionado! " + roupa);
+                        JOptionPane.showMessageDialog(null, "Produto adicionado! " );
                     } 
                     dispose();
                 } catch (NumberFormatException ex) {

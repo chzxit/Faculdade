@@ -28,8 +28,8 @@ public class AlterarProdutobtn extends JFrame {
         JTextField idField = new JTextField();
         JLabel nomeLabel = new JLabel("Novo Nome:");
         JTextField nomeField = new JTextField();
-        JLabel preçoLabel = new JLabel("Novo Preço:");
-        JTextField preçoField = new JTextField();
+        JLabel precoLabel = new JLabel("Novo Preço:");
+        JTextField precoField = new JTextField();
         JLabel corLabel = new JLabel("Nova Cor:");
         JTextField corField = new JTextField();
         JLabel tamanhoLabel = new JLabel("Novo Tamanho:");
@@ -41,8 +41,8 @@ public class AlterarProdutobtn extends JFrame {
         panel.add(idField);
         panel.add(nomeLabel);
         panel.add(nomeField);
-        panel.add(preçoLabel);
-        panel.add(preçoField);
+        panel.add(precoLabel);
+        panel.add(precoField);
         panel.add(corLabel);
         panel.add(corField);
         panel.add(tamanhoLabel);
@@ -56,7 +56,8 @@ public class AlterarProdutobtn extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String nome = nomeField.getText();
-                double preço = Double.parseDouble(preçoField.getText());
+                String precoStr = precoField.getText().replace(",", ".");
+                double preço = Double.parseDouble(precoStr);
                 String cor = corField.getText();
                 String tamanho = tamanhoField.getText();
 
