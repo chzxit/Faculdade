@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AlterarProdutobtn extends JFrame {
-    private Gerenciadordeproduto gerenciador;
+   final private Gerenciadordeproduto gerenciador;
 
     public AlterarProdutobtn(Gerenciadordeproduto gerenciador) {
         this.gerenciador = gerenciador;

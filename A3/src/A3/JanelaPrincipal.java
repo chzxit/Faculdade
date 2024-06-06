@@ -83,13 +83,7 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
-        alterarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e){
-                new AlterarProdutobtn(gerenciador).setVisible(true);
-            }
-        });
-
+       
         sairButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
