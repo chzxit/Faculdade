@@ -10,7 +10,7 @@ public class ListarProdutobtn extends JFrame {
 
    
     private Gerenciadordeproduto gerenciador;
-    DecimalFormat df = new DecimalFormat("##.##");
+    DecimalFormat df = new DecimalFormat("#.##");
     
     public ListarProdutobtn(Gerenciadordeproduto gerenciador){
         this.gerenciador = gerenciador;
