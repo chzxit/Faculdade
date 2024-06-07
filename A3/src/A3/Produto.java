@@ -91,6 +91,11 @@ public  abstract class Produto {
     }
 
     public abstract double CalcImpost();
+
+    @Override
+    public String toString(){ 
+        return  String.format(tipo);
+    }
  
-  
+
 }

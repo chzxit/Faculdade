@@ -1,6 +1,7 @@
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -63,6 +64,9 @@ public class AlterarProdutobtn extends JFrame {
 
                 boolean Alterar = gerenciador.alterarProduto(id, nome, preço, cor, tamanho);
                 if (Alterar) {
+                    Produto produto = gerenciador.buscarProduto(id);
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    double imposto = produto.CalcImpost();
                     JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!");
                     dispose();
                 } else {

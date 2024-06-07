@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -9,7 +10,8 @@ public class ListarProdutobtn extends JFrame {
 
    
     private Gerenciadordeproduto gerenciador;
-
+    DecimalFormat df = new DecimalFormat("##.##");
+    
     public ListarProdutobtn(Gerenciadordeproduto gerenciador){
         this.gerenciador = gerenciador;
         initUI();
@@ -27,6 +29,7 @@ public class ListarProdutobtn extends JFrame {
         ArrayList<Produto> produtos = gerenciador.listarProdutos();
         for(Produto produto : produtos ){
             StringBuilder produtoStr = new StringBuilder();
+            double imposto = produto.CalcImpost();
             produtoStr.append("--");
             produtoStr.append("Nome: " + produto.getNome() + "\n");
             produtoStr.append("--");
@@ -44,7 +47,7 @@ public class ListarProdutobtn extends JFrame {
             produtoStr.append("--");
             produtoStr.append("Estilo: " + produto.getEstilo() + "\n");
             produtoStr.append("--");
-            produtoStr.append("Imposto: " + produto.CalcImpost());
+            produtoStr.append("Imposto: ").append(df.format(imposto)).append("\n");
             textArea.append(produtoStr + "\n");
         }
     }
