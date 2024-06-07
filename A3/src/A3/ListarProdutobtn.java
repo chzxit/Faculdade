@@ -43,6 +43,8 @@ public class ListarProdutobtn extends JFrame {
             produtoStr.append("Material: " + produto.getMaterial() + "\n");
             produtoStr.append("--");
             produtoStr.append("Estilo: " + produto.getEstilo() + "\n");
+            produtoStr.append("--");
+            produtoStr.append("Imposto: " + produto.CalcImpost());
             textArea.append(produtoStr + "\n");
         }
     }

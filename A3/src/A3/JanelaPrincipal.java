@@ -91,14 +91,7 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              
-                CalculadoraImpostos calculadoraImpostos = new CalculadoraImpostos();
-                calculadoraImpostos.CalcularImpostos(roupa);
-            }
-        });
+       
     
          }
         

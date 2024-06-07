@@ -71,7 +71,7 @@ public class AdicionarProdutobtn extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    System.out.println("Produto adicionado! ");
+                    System.out.println("Produto adicionado!");
                     String nome = nomeField.getText();
                     String precoStr = precoField.getText().replace(",", ".");
                     double preco = Double.parseDouble(precoStr);
@@ -81,27 +81,29 @@ public class AdicionarProdutobtn extends JFrame {
                     String material = materialField.getText();
                     String estilo = estiloField.getText();
                     String tipo = (String) tipoComboBox.getSelectedItem();
-
-                  Roupas roupa = null;
+        
+                    Roupas roupa = null;
                     switch (tipo) {
                         case "Calça":
-                        roupa = new Calca(nome , preco , id, cor ,tamanho , tipo ,material ,estilo);
+                            roupa = new Calca(nome, preco, id, cor, tamanho, tipo, material, estilo);
                             break;
                         case "Camisa":
-                        roupa = new Camisa(nome , preco , id, cor ,tamanho , tipo ,material ,estilo);
+                            roupa = new Camisa(nome, preco, id, cor, tamanho, tipo, material, estilo);
                             break;
                         case "Vestido":
-                        roupa= new Vestido(nome , preco , id, cor ,tamanho , tipo ,material ,estilo);
+                            roupa = new Vestido(nome, preco, id, cor, tamanho, tipo, material, estilo);
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, "Tipo de produto não reconhecido: ");
-                            return; 
+                            return;
                     }
-
-                    if (roupa != null) {
+        
+                    
+                  
+                    if (roupa!= null) {
                         gerenciador.adicionarProduto(roupa);
-                        JOptionPane.showMessageDialog(null, "Produto adicionado! ");
-                    } 
+                        JOptionPane.showMessageDialog(null, "Produto adicionado!" );
+                    }
                     dispose();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "Preço inválido. Por favor, insira um valor numérico.");

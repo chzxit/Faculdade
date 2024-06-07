@@ -1,4 +1,4 @@
-public class Produto {
+public  abstract class Produto {
 
     private String nome;
     private double preco;
@@ -85,6 +85,12 @@ public class Produto {
     public void setEstilo(String estilo){
         this.estilo = estilo;
     }
+
+    public void exibirInfo(){
+        
+    }
+
+    public abstract double CalcImpost();
  
   
 }

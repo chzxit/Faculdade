@@ -14,7 +14,14 @@ public class Gerenciadordeproduto {
     }
 
     public ArrayList<Produto> listarProdutos() {
-        return new ArrayList<>(produtos); 
+        ArrayList<Produto> listaCompletada = new ArrayList<>();
+        for (Produto produto : produtos) {
+            listaCompletada.add(produto);
+            System.out.println("Informações do Produto:");
+            produto.exibirInfo();
+            System.out.println("Imposto: " + produto.CalcImpost());
+        }
+        return listaCompletada;
     }
 
     public void removerProduto(String id) {
