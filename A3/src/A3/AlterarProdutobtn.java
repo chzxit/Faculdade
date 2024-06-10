@@ -61,12 +61,17 @@ public class AlterarProdutobtn extends JFrame {
                 double preço = Double.parseDouble(precoStr);
                 String cor = corField.getText();
                 String tamanho = tamanhoField.getText();
+                
 
                 boolean Alterar = gerenciador.alterarProduto(id, nome, preço, cor, tamanho);
                 if (Alterar) {
                     Produto produto = gerenciador.buscarProduto(id);
                     DecimalFormat df = new DecimalFormat("#.##");
                     double imposto = produto.CalcImpost();
+                    String impostoFormatado = df.format(imposto);
+                    double impostoNumerico = Double.parseDouble(impostoFormatado);
+                    String valorTotal = (df.format(imposto) + Double.parseDouble(impostoFormatado));
+
                     JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!");
                     dispose();
                 } else {

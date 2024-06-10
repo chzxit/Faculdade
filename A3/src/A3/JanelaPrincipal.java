@@ -19,12 +19,12 @@ public class JanelaPrincipal extends JFrame {
     private void initUI(){
 
         this.setTitle("Gerenciador de Roupas");
-        this.setSize(700,450);
+        this.setSize(600,400);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(8,1));
+        panel.setLayout(new GridLayout(6,1));
 
         JButton addButton = new JButton("Adicionar Produto ");
         JButton listarButton = new JButton("Listar Produto ");
@@ -90,29 +90,7 @@ public class JanelaPrincipal extends JFrame {
                 System.exit(0);
             }
         });
-
-       
-    
-         }
-        
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
+ }    
+}
 
     
