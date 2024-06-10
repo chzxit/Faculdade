@@ -85,13 +85,13 @@ public class AdicionarProdutobtn extends JFrame {
                     Roupas roupa = null;
                     switch (tipo) {
                         case "Calça":
-                            roupa = new Calca(nome, preco, id, cor, tamanho, tipo, material, estilo, total);
+                            roupa = new Calca(nome, preco, id, cor, tamanho, tipo, material, estilo);
                             break;
                         case "Camisa":
-                            roupa = new Camisa(nome, preco, id, cor, tamanho, tipo, material, estilo, total);
+                            roupa = new Camisa(nome, preco, id, cor, tamanho, tipo, material, estilo);
                             break;
                         case "Vestido":
-                            roupa = new Vestido(nome, preco, id, cor, tamanho, tipo, material, estilo, total);
+                            roupa = new Vestido(nome, preco, id, cor, tamanho, tipo, material, estilo);
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, "Tipo de produto não reconhecido: ");

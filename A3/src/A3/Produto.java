@@ -8,9 +8,9 @@ public  abstract class Produto {
     private String tipo;
     private String material;
     private String estilo;
-    private double total;
+  
 
-    public Produto(String nome, double preco, String id, String cor, String tamanho, String tipo , String material, String estilo, double total) {
+    public Produto(String nome, double preco, String id, String cor, String tamanho, String tipo , String material, String estilo) {
         this.nome = nome;
         this.preco = preco;
         this.id = id;
@@ -19,7 +19,7 @@ public  abstract class Produto {
         this.tipo = tipo;
         this.material = material;
         this.estilo = estilo; 
-        this.total = total;
+        
         
     }
    
@@ -86,14 +86,6 @@ public  abstract class Produto {
 
     public void setEstilo(String estilo){
         this.estilo = estilo;
-    }
-
-    public double getTotal(){
-        return total;
-    }
-
-    public void setTotal(double total){
-        this.total = total;
     }
 
     public void exibirInfo(){
