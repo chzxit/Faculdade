@@ -48,6 +48,11 @@ public class ListarProdutobtn extends JFrame {
             produtoStr.append("Estilo: " + produto.getEstilo() + "\n");
             produtoStr.append("--");
             produtoStr.append("Imposto: ").append(df.format(imposto)).append("\n");
+            produtoStr.append("--");
+            String impostoFormatado = df.format(imposto);
+            double impostoNumerico = Double.parseDouble(impostoFormatado);
+            String valorTotalFormatado = df.format(produto.getPreco() + impostoNumerico);
+            produtoStr.append("Valor total: " + valorTotalFormatado + "\n");
             textArea.append(produtoStr + "\n");
         }
     }

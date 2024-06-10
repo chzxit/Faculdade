@@ -19,7 +19,7 @@ public class Gerenciadordeproduto {
             listaCompletada.add(produto);
             System.out.println("Informações do Produto:");
             produto.exibirInfo();
-            System.out.println("Imposto: " + produto.CalcImpost());
+            System.out.println("Imposto: " + (produto.CalcImpost()+ produto.getPreco()));
         }
         return listaCompletada;
     }
