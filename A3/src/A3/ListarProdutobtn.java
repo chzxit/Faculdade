@@ -47,7 +47,7 @@ public class ListarProdutobtn extends JFrame {
             produtoStr.append("--");
             produtoStr.append("Estilo: " + produto.getEstilo() + "\n");
             produtoStr.append("--");
-            produtoStr.append("Imposto: ").append(df.format(imposto)).append("\n");
+            produtoStr.append("Valor imposto: ").append(df.format(imposto)).append("\n");
             produtoStr.append("--");
             String impostoFormatado = df.format(imposto);
             double impostoNumerico = Double.parseDouble(impostoFormatado);
