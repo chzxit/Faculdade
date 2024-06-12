@@ -7,7 +7,7 @@ import javax.swing.JTextArea;
 
 
 public class ListarProdutobtn extends JFrame {
-double numero = 3;
+
    
     private Gerenciadordeproduto gerenciador;
     DecimalFormat df = new DecimalFormat("#.##");
