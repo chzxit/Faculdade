@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -23,7 +24,7 @@ public class AlterarProdutobtn extends JFrame {
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(6, 2));
+        panel.setLayout(new GridLayout(7, 2));
 
         JLabel idLabel = new JLabel("ID do Produto:");
         JTextField idField = new JTextField();
@@ -35,7 +36,8 @@ public class AlterarProdutobtn extends JFrame {
         JTextField corField = new JTextField();
         JLabel tamanhoLabel = new JLabel("Novo Tamanho:");
         JTextField tamanhoField = new JTextField();
-
+        JLabel tipoLabel = new JLabel("Novo Tipo: ");
+         JComboBox<String> tipoComboBox = new JComboBox<>(new String[]{"Calça", "Camisa", "Vestido"});
         JButton AlterarButton = new JButton("Alterar");
 
         panel.add(idLabel);
@@ -48,7 +50,10 @@ public class AlterarProdutobtn extends JFrame {
         panel.add(corField);
         panel.add(tamanhoLabel);
         panel.add(tamanhoField);
+        panel.add(tipoLabel);
+        panel.add(tipoComboBox);
         panel.add(AlterarButton);
+       
 
         add(panel);
 
@@ -61,6 +66,7 @@ public class AlterarProdutobtn extends JFrame {
                 double preço = Double.parseDouble(precoStr);
                 String cor = corField.getText();
                 String tamanho = tamanhoField.getText();
+                String tipo = (String) tipoComboBox.getSelectedItem();
                 
 
                 boolean Alterar = gerenciador.alterarProduto(id, nome, preço, cor, tamanho);
