@@ -5,9 +5,10 @@ public class Calca extends Roupas{
     }
 
     @Override
-    public double CalcImpost() {
+    public double calcImpost() {
         
-        return getPreco() * 0.12; 
+        return preco *0.12;
+     
     }
 
 

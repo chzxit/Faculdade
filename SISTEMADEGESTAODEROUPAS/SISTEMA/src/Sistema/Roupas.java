@@ -8,9 +8,10 @@ public abstract class Roupas extends Produto {
     protected String cor;
     protected String tamanho;
     protected double total;
+    protected double imposto;
 
     public Roupas(String nome, double preco, String id, String cor, String tamanho, String tipo, String material, String estilo) {
-        super(nome , preco , id, cor , tamanho , tipo , material , estilo );
+        super(nome , preco , id, cor , tamanho , tipo , material , estilo);
         this.tipo = tipo;
         this.material = material;
         this.estilo = estilo;
@@ -19,7 +20,8 @@ public abstract class Roupas extends Produto {
         this.id = id;
         this.cor = cor;
         this.tamanho = tamanho;
+
     }
 
-    
+
  }

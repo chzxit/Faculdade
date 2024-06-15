@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class JanelaPrincipal extends JFrame {
 
-    final private Gerenciadordeproduto gerenciador;
+    final Gerenciadordeproduto gerenciador;
 
     public JanelaPrincipal(Gerenciadordeproduto gerenciador){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

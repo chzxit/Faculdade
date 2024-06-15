@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class BuscarProdutobtn extends JFrame{
-    private Gerenciadordeproduto gerenciador;
+    final Gerenciadordeproduto gerenciador;
 
     public BuscarProdutobtn(Gerenciadordeproduto gerenciador){
         this.gerenciador = gerenciador;

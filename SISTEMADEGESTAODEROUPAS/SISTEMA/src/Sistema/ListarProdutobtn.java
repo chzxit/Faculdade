@@ -5,13 +5,10 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-
 public class ListarProdutobtn extends JFrame {
-
-   
-    private Gerenciadordeproduto gerenciador;
+    final Gerenciadordeproduto gerenciador;
     DecimalFormat df = new DecimalFormat("#.##");
-    
+
     public ListarProdutobtn(Gerenciadordeproduto gerenciador){
         this.gerenciador = gerenciador;
         initUI();
@@ -29,32 +26,21 @@ public class ListarProdutobtn extends JFrame {
         ArrayList<Produto> produtos = gerenciador.listarProdutos();
         for(Produto produto : produtos ){
             StringBuilder produtoStr = new StringBuilder();
-            double imposto = produto.CalcImpost();
-            produtoStr.append("--");
-            produtoStr.append("Nome: " + produto.getNome() + "\n");
-            produtoStr.append("--");
-            produtoStr.append("Preço: " + produto.getPreco() + "\n");
-            produtoStr.append("--");
-            produtoStr.append("ID: " + produto.getId() + "\n");
-            produtoStr.append("--");
-            produtoStr.append("Cor: " + produto.getCor() + "\n");
-            produtoStr.append("--");
-            produtoStr.append("Tamanho: " + produto.getTamanho() + "\n");
-            produtoStr.append("--");
-            produtoStr.append("Tipo: " + produto.getTipo() + "\n");
-            produtoStr.append("--");
-            produtoStr.append("Material: " + produto.getMaterial() + "\n");
-            produtoStr.append("--");
-            produtoStr.append("Estilo: " + produto.getEstilo() + "\n");
-            produtoStr.append("--");
+            double imposto = produto.calcImpost();
+            double preco = produto.getPreco();
+            
+            produtoStr.append("--\n");
+            produtoStr.append("Nome: ").append(produto.getNome()).append("\n");
+            produtoStr.append("Preço: ").append(df.format(preco)).append("\n");
+            produtoStr.append("ID: ").append(produto.getId()).append("\n");
+            produtoStr.append("Cor: ").append(produto.getCor()).append("\n");
+            produtoStr.append("Tamanho: ").append(produto.getTamanho()).append("\n");
+            produtoStr.append("Tipo: ").append(produto.getTipo()).append("\n");
             produtoStr.append("Valor imposto: ").append(df.format(imposto)).append("\n");
-            produtoStr.append("--");
-            String impostoFormatado = df.format(imposto);
-            double impostoNumerico = Double.parseDouble(impostoFormatado);
-            String valorTotalFormatado = df.format(produto.getPreco() + impostoNumerico);
-            produtoStr.append("Valor total: " + valorTotalFormatado + "\n");
-            textArea.append(produtoStr + "\n");
+            produtoStr.append("Valor total: ").append(df.format(preco + imposto)).append("\n");
+            produtoStr.append("--\n");
+
+            textArea.append(produtoStr.toString());
         }
     }
-
 }

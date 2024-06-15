@@ -1,7 +1,6 @@
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -11,8 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AlterarProdutobtn extends JFrame {
-   final private Gerenciadordeproduto gerenciador;
-
+    final private Gerenciadordeproduto gerenciador;
     public AlterarProdutobtn(Gerenciadordeproduto gerenciador) {
         this.gerenciador = gerenciador;
         initUI();
@@ -36,9 +34,9 @@ public class AlterarProdutobtn extends JFrame {
         JTextField corField = new JTextField();
         JLabel tamanhoLabel = new JLabel("Novo Tamanho:");
         JTextField tamanhoField = new JTextField();
-        JLabel tipoLabel = new JLabel("Novo Tipo: ");
-         JComboBox<String> tipoComboBox = new JComboBox<>(new String[]{"Calça", "Camisa", "Vestido"});
-        JButton AlterarButton = new JButton("Alterar");
+        JLabel tipoLabel = new JLabel("Novo Tipo:");
+        JComboBox<String> tipoComboBox = new JComboBox<>(new String[]{"Calça", "Camisa", "Vestido"});
+        JButton alterarButton = new JButton("Alterar");
 
         panel.add(idLabel);
         panel.add(idField);
@@ -52,32 +50,24 @@ public class AlterarProdutobtn extends JFrame {
         panel.add(tamanhoField);
         panel.add(tipoLabel);
         panel.add(tipoComboBox);
-        panel.add(AlterarButton);
-       
+        panel.add(alterarButton);
 
         add(panel);
 
-        AlterarButton.addActionListener(new ActionListener() {
+        alterarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String nome = nomeField.getText();
                 String precoStr = precoField.getText().replace(",", ".");
-                double preço = Double.parseDouble(precoStr);
+                double preco = Double.parseDouble(precoStr);
                 String cor = corField.getText();
                 String tamanho = tamanhoField.getText();
                 String tipo = (String) tipoComboBox.getSelectedItem();
-                
-
-                boolean Alterar = gerenciador.alterarProduto(id, nome, preço, cor, tamanho);
-                if (Alterar) {
-                    Produto produto = gerenciador.buscarProduto(id);
-                    DecimalFormat df = new DecimalFormat("#.##");
-                    double imposto = produto.CalcImpost();
-                    String impostoFormatado = df.format(imposto);
-                    double impostoNumerico = Double.parseDouble(impostoFormatado);
-                    String valorTotal = (df.format(imposto) + Double.parseDouble(impostoFormatado));
-
+               
+                boolean alterar = gerenciador.alterarProduto(id, nome, preco, cor, tamanho, tipo);
+                if (alterar) {
+                   
                     JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!");
                     dispose();
                 } else {

@@ -1,4 +1,6 @@
-public  abstract class Produto {
+
+
+public abstract class Produto {
 
     private String nome;
     private double preco;
@@ -8,6 +10,7 @@ public  abstract class Produto {
     private String tipo;
     private String material;
     private String estilo;
+    private double imposto;
   
 
     public Produto(String nome, double preco, String id, String cor, String tamanho, String tipo , String material, String estilo) {
@@ -19,6 +22,7 @@ public  abstract class Produto {
         this.tipo = tipo;
         this.material = material;
         this.estilo = estilo; 
+        this.imposto = imposto;
         
         
     }
@@ -88,18 +92,26 @@ public  abstract class Produto {
         this.estilo = estilo;
     }
 
+    public double getimposto(){
+        return imposto;
+    }
+
+    public void setimposto(double imposto){
+        this.imposto = imposto;
+    }
+
     public void exibirInfo(){
         
     }
 
-    public abstract double CalcImpost();
+    public double calcImpost(){
+        return preco * imposto;
+    }
 
     @Override
     public String toString(){ 
-        return  String.format(tipo);
+        return  String.format("| "+"Nome: " + " " + nome + " | " +"Tipo: " + " " + tipo + " | " + "Preço: " +" "+  preco + " |");
     }
 
-    
- 
 
 }

@@ -5,9 +5,10 @@ public class Camisa extends Roupas  {
     }
 
     @Override
-    public double CalcImpost() {
+    public double calcImpost() {
         
-        return getPreco() * 0.10; 
+        return preco *0.11;
+      
     }
 
 
